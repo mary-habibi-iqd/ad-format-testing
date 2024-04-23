@@ -6,7 +6,7 @@ const mandanten = {
         Sueddeutsche: 'www.sueddeutsche.de',
         SZMagazin: 'www.sz-magazin.sueddeutsche.de',
         Jetzt: 'www.jetzt.de',
-        ZEITOnline: 'www.zeit.de'
+        ZEITOnline: 'www.zeit.de/index'
     },
     "Premium Portfolio": {
         Ariva: 'www.ariva.de',
@@ -79,4 +79,19 @@ function createLinks() {
 
         output.appendChild(list);
     }
+}
+
+const notification = document.querySelector('#notification');
+
+button.addEventListener('click', () => {
+    output.innerHTML = '';
+    createLinks();
+    showNotification();
+});
+
+function showNotification() {
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 3000); // Hide the notification after 3 seconds
 }
